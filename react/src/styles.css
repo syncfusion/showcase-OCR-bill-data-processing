@@ -1,0 +1,243 @@
+/* Page styles. Mirrors the legacy index.html's <style> block: same spinner
+   keyframes, same responsive @media rule, same `.error` colour class.
+   The Tailwind 3 theme bundle imported in main.tsx supplies every Syncfusion
+   control's styles. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f4f6;
+  color: #111827;
+  font-family: Inter, system-ui, "Segoe UI", sans-serif;
+}
+
+html[data-theme="dark"] body {
+  background: #111827;
+  color: #f3f4f6;
+}
+
+header.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+html[data-theme="dark"] header.app-header {
+  background: #1f2937;
+  border-bottom-color: #374151;
+}
+
+header.app-header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+html[data-theme="dark"] header.app-header h1 {
+  color: #f3f4f6;
+}
+
+.upload-hint {
+  color: var(--app-muted, #6b7280);
+}
+
+.uploader-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+html[data-theme="dark"] .uploader-row {
+  background: #1f2937;
+  border-bottom-color: #374151;
+}
+
+header.app-header .toggles,
+.uploader-row .toggles {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+header.app-header .toggles label,
+.uploader-row .toggles label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  color: #111827;
+}
+
+html[data-theme="dark"] header.app-header .toggles label,
+html[data-theme="dark"] .uploader-row .toggles label {
+  color: #f3f4f6;
+}
+
+header.app-header .status,
+.uploader-row .status {
+  flex: 1;
+  min-width: 200px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+html[data-theme="dark"] header.app-header .status,
+html[data-theme="dark"] .uploader-row .status {
+  color: #d1d5db;
+}
+
+header.app-header .status.error,
+.uploader-row .status.error {
+  color: #dc2626;
+}
+
+header.app-header .upload-input,
+.uploader-row .upload-input {
+  margin-left: auto;
+}
+
+.upload-input .e-upload {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+section.panel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  min-width: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="dark"] section.panel {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+section.panel h2 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+html[data-theme="dark"] section.panel h2 {
+  color: #d1d5db;
+}
+
+.review-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#spinner {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(2px);
+  font-weight: 600;
+  color: #111827;
+}
+
+html[data-theme="dark"] #spinner {
+  background: rgba(17, 24, 39, 0.75);
+  color: #f3f4f6;
+}
+
+#spinner.on {
+  display: flex;
+}
+
+#spinner .spinner-icon {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+html[data-theme="dark"] #spinner .spinner-icon {
+  border-color: #374151;
+  border-top-color: #818cf8;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #spinner .spinner-icon {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+  header.app-header,
+  .uploader-row {
+    padding: 12px;
+  }
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.theme-toggle:hover {
+  border-color: currentColor;
+}
+
+.e-spinner-pane {
+  /* The app's busy overlay must hide the Syncfusion controls' own spinner
+     while it's on screen (factory/standards/app-source-baseline.md,
+     "Loading states", "One indicator per area"). */
+}
+
+body.busy .e-pdfviewer .e-spinner-pane,
+body.busy .e-grid .e-spinner-pane,
+body.busy .e-spreadsheet .e-spinner-pane {
+  visibility: hidden;
+}

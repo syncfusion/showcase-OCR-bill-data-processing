@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Data Extractor</title>
+    <style>
+      /* The static frame shown while the React app boots and the Syncfusion theme bundle loads.
+         Sized and coloured like the app's header so the page never flashes blank. */
+      #app-boot { margin: 0; font-family: Inter, system-ui, "Segoe UI", sans-serif; }
+      #app-boot header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px;
+        padding: 12px 24px; background: #fff; border-bottom: 1px solid #e5e7eb; }
+      #app-boot h1 { margin: 0; font-size: 18px; font-weight: 600; color: #111827; }
+      #app-boot nav { padding: 16px 24px; color: #6b7280; font-size: 14px; }
+      html[data-theme="dark"] #app-boot header { background: #111827; border-bottom-color: #374151; }
+      html[data-theme="dark"] #app-boot h1 { color: #f3f4f6; }
+      html[data-theme="dark"] #app-boot nav { color: #d1d5db; }
+    </style>
+  </head>
+  <body>
+    <div id="app-boot">
+      <header>
+        <h1>Document Data Extractor</h1>
+      </header>
+      <nav role="status">Loading the OCR workspace…</nav>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

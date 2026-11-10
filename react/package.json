@@ -1,0 +1,32 @@
+{
+  "name": "ocr-bill-data-extractor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@syncfusion/ej2-react-buttons": "35.1.37",
+    "@syncfusion/ej2-react-grids": "35.1.37",
+    "@syncfusion/ej2-react-inputs": "35.1.37",
+    "@syncfusion/ej2-react-pdfviewer": "35.1.37",
+    "@syncfusion/ej2-react-popups": "35.1.37",
+    "@syncfusion/ej2-react-spreadsheet": "35.1.37",
+    "@syncfusion/ej2-tailwind3-theme": "35.1.37",
+    "lucide-react": "1.65.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}
