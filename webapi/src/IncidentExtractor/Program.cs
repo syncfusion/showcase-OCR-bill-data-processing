@@ -11,7 +11,12 @@ using Syncfusion.SmartDataExtractor;
 using Syncfusion.OCRProcessor;
 
 
-SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JBaF5cWWFCf1FpRnxbf1x2ZFJMYVVbRH5PMyBoS35RcERiWXxed3dQQmNaUkR+VEFY");
+// The license key comes from the SYNCFUSION_LICENSE_KEY environment variable; never commit it.
+var syncfusionLicenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+if (!string.IsNullOrWhiteSpace(syncfusionLicenseKey))
+{
+    SyncfusionLicenseProvider.RegisterLicense(syncfusionLicenseKey);
+}
 
 var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(o => o.Limits.MaxRequestBodySize = 20 * 1024 * 1024);
